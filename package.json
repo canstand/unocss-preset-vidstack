@@ -1,0 +1,87 @@
+{
+  "name": "unocss-preset-vidstack",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.14.1",
+  "description": "UnoCSS preset for Vidstack Player",
+  "author": "canstand <https://github.com/canstand>",
+  "license": "MIT",
+  "homepage": "https://github.com/canstand/unocss-preset-vidstack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canstand/unocss-preset-vidstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/canstand/unocss-preset-vidstack/issues"
+  },
+  "keywords": [
+    "unocss",
+    "vidstack",
+    "unocss-preset",
+    "unocss-preset-vidstack"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp --commit --push --tag && pnpm publish",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks",
+    "play": "vite playground",
+    "deploy": "vite build playground"
+  },
+  "peerDependencies": {
+    "@unocss/core": ">= 0.31.13 < 1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.2",
+    "@types/node": "^20.11.4",
+    "@unocss/eslint-plugin": "^0.58.3",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "bumpp": "^9.2.1",
+    "eslint": "npm:eslint-ts-patch@^8.56.0-0",
+    "eslint-ts-patch": "^8.56.0-0",
+    "lint-staged": "^15.2.0",
+    "pnpm": "^8.14.1",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "5.3.3",
+    "unbuild": "^2.0.0",
+    "unocss": "^0.58.3",
+    "vite": "^5.0.11",
+    "vitest": "^1.2.0"
+  },
+  "dependencies": {
+    "@unocss/preset-mini": "^0.58.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
