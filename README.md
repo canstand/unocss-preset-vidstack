@@ -3,6 +3,7 @@
 UnoCSS preset for [Vidstack Player](https://www.vidstack.io/docs/wc/player/styling/tailwind).
 
 ## Usage
+
 ```shell
 pnpm i -D unocss-preset-vidstack unocss
 ```
@@ -22,13 +23,13 @@ export default defineConfig({
   variants: [
     // https://www.vidstack.io/docs/wc/player/styling/tailwind#hocus
     (matcher) => {
-        if (!matcher.startsWith('hocus:'))
-          return matcher
-        return {
-          matcher: matcher.replace(/^hocus:/, ''),
-          selector: s => `${s}:hover, ${s}:focus-visible`,
-        }
-      },
+      if (!matcher.startsWith('hocus:'))
+        return matcher
+      return {
+        matcher: matcher.replace(/^hocus:/, ''),
+        selector: s => `${s}:hover, ${s}:focus-visible`,
+      }
+    },
   ],
 })
 ```

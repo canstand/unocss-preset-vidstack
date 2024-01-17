@@ -58,6 +58,9 @@
   "peerDependencies": {
     "@unocss/core": ">= 0.31.13 < 1"
   },
+  "dependencies": {
+    "@unocss/preset-mini": "^0.58.3"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
     "@types/node": "^20.11.4",
@@ -65,6 +68,7 @@
     "@vitejs/plugin-vue": "^4.5.2",
     "bumpp": "^9.2.1",
     "eslint": "npm:eslint-ts-patch@^8.56.0-0",
+    "eslint-plugin-format": "^0.1.0",
     "eslint-ts-patch": "^8.56.0-0",
     "lint-staged": "^15.2.0",
     "pnpm": "^8.14.1",
@@ -74,9 +78,6 @@
     "unocss": "^0.58.3",
     "vite": "^5.0.11",
     "vitest": "^1.2.0"
-  },
-  "dependencies": {
-    "@unocss/preset-mini": "^0.58.3"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

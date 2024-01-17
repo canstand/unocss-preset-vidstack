@@ -1,11 +1,10 @@
-import { createGenerator } from 'unocss'
+import { createGenerator, presetUno } from 'unocss'
 import { expect, it } from 'vitest'
-import { presetUno } from 'unocss'
 import { presetVidstack } from '../src'
 
 it('webComponents true', async () => {
   const uno = createGenerator({
-    presets: [presetUno({preflight: false}), presetVidstack({webComponents: true})],
+    presets: [presetUno({ preflight: false }), presetVidstack({ webComponents: true })],
   })
   const presets = uno.config.presets
   expect(presets).toHaveLength(2)
@@ -20,7 +19,7 @@ it('webComponents true', async () => {
 
 it('webcomponents false', async () => {
   const uno = createGenerator({
-    presets: [presetUno({preflight: false}), presetVidstack({webComponents: false})],
+    presets: [presetUno({ preflight: false }), presetVidstack({ webComponents: false })],
   })
   const presets = uno.config.presets
   expect(presets).toHaveLength(2)
